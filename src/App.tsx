@@ -1,25 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes as RoutesContainer, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Inventory from "./components/Inventory";
+import InventoryOverview from "./components/InventoryOverview";
+import InventoryDetails from "./components/InventoryDetails";
+import NoMatch from "./components/NoMatch";
+import { Routes } from "./types";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RoutesContainer>
+      <Route path={`${Routes.home}`} element={<Home />} />
+      <Route path={`${Routes.overview}`} element={<InventoryOverview />} />
+      <Route
+        path={`${Routes.inventory}/:id${Routes.overview}`}
+        element={<Inventory />}
+      />
+      <Route
+        path={`${Routes.inventory}/:id${Routes.scanners}`}
+        element={<Inventory />}
+      />
+      <Route
+        path={`${Routes.inventory}/:id${Routes.splitAssembly}`}
+        element={<Inventory />}
+      />
+      <Route
+        path={`${Routes.inventory}/:id${Routes.locationAndSection}`}
+        element={<Inventory />}
+      />
+      <Route
+        path={`${Routes.inventory}/:id${Routes.control}`}
+        element={<Inventory />}
+      />
+      <Route
+        path={`${Routes.inventory}/:id${Routes.readers}`}
+        element={<Inventory />}
+      />
+      <Route
+        path={`${Routes.inventory}/:id${Routes.attendance}`}
+        element={<Inventory />}
+      />
+
+      <Route
+        path={`${Routes.inventory}/:id${Routes.details}${Routes.overview}`}
+        element={<InventoryDetails />}
+      />
+
+      <Route path="*" element={<NoMatch />} />
+    </RoutesContainer>
   );
 }
 
