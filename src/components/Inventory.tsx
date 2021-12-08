@@ -1,23 +1,15 @@
 import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { Routes } from "../types";
 import ModalBase from "./ModalBase";
 
 type MenuTab = { title: string; path?: string };
 
-const tabs: MenuTab[] = [
-  { title: "Přehled", path: `${Routes.overview}` },
-  { title: "Skenovači", path: `${Routes.scanners}` },
-  { title: "Rozdílová sestava", path: `${Routes.splitAssembly}` },
-  { title: "Lokace a sekce", path: `${Routes.locationAndSection}` },
-  { title: "Kontroly", path: `${Routes.control}` },
-  { title: "Čtečky", path: `${Routes.readers}` },
-  { title: "Docházka", path: `${Routes.attendance}` },
-];
-
 const Inventory = () => {
   const { id } = useParams<"id">();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -33,6 +25,16 @@ const Inventory = () => {
   const onTabClick = (tab: MenuTab) => {
     if (tab.path) navigate(`${Routes.inventory}/${id}${tab.path}`);
   };
+
+  const tabs: MenuTab[] = [
+    { title: t("Overview"), path: `${Routes.overview}` },
+    { title: t("Scanners"), path: `${Routes.scanners}` },
+    { title: t("Split Assembly"), path: `${Routes.splitAssembly}` },
+    { title: t("Location and section"), path: `${Routes.locationAndSection}` },
+    { title: t("Control"), path: `${Routes.control}` },
+    { title: t("Readers"), path: `${Routes.readers}` },
+    { title: t("Attendance"), path: `${Routes.attendance}` },
+  ];
 
   return (
     <Box style={{ display: "flex", flexDirection: "column" }}>
