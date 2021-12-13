@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { Routes } from "../types";
 import ModalBase from "./ModalBase";
+import localizationHelper from "../services/i18n/i18nHelper";
 
 type MenuTab = { title: string; path?: string };
 
@@ -27,13 +28,34 @@ const Inventory = () => {
   };
 
   const tabs: MenuTab[] = [
-    { title: t("Overview"), path: `${Routes.overview}` },
-    { title: t("Scanners"), path: `${Routes.scanners}` },
-    { title: t("Split Assembly"), path: `${Routes.splitAssembly}` },
-    { title: t("Location and section"), path: `${Routes.locationAndSection}` },
-    { title: t("Control"), path: `${Routes.control}` },
-    { title: t("Readers"), path: `${Routes.readers}` },
-    { title: t("Attendance"), path: `${Routes.attendance}` },
+    {
+      title: t(localizationHelper.Inventory.Overview),
+      path: `${Routes.overview}`,
+    },
+    {
+      title: t(localizationHelper.Inventory.Scanners),
+      path: `${Routes.scanners}`,
+    },
+    {
+      title: t(localizationHelper.Inventory.SplitAssembly),
+      path: `${Routes.splitAssembly}`,
+    },
+    {
+      title: t(localizationHelper.Inventory.LocationAndSection),
+      path: `${Routes.locationAndSection}`,
+    },
+    {
+      title: t(localizationHelper.Inventory.Control),
+      path: `${Routes.control}`,
+    },
+    {
+      title: t(localizationHelper.Inventory.Readers),
+      path: `${Routes.readers}`,
+    },
+    {
+      title: t(localizationHelper.Inventory.Attendance),
+      path: `${Routes.attendance}`,
+    },
   ];
 
   return (
