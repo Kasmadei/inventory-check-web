@@ -1,3 +1,33 @@
 {
-    "Welcome to React": "Vítejte v React a react-i18next"
+    "Common": {
+        "Inventory": "Inventura",
+        "Continue": "Pokračovat",
+        "Close": "Zavřít",
+        "Save": "Uložit"
+    },
+    "Inventory": {
+        "ScannedLocations": "Naskenované lokace",
+        "LocationWithLabel": "Lokace {{label}}",
+        "Finish": "Ukončit",
+        "Overview": "Přehled",
+        "Scanners": "Skenovači",
+        "SplitAssembly": "Rozdělová sestava",
+        "LocationAndSection": "Lokace a sekce",
+        "Control": "Kontroly",
+        "Readers": "Čtečky",
+        "Attendance": "Docházka"
+    },
+    "Auth": {
+        "ID": "ID",
+        "SafetyAndProtection": "BOZP",
+        "ShortExplanationHowToScan": "Krátké vysvětlení jak skenovat",
+        "Agree": "Souhlas",
+        "SignIn": "Přihlásit"
+    },
+    "Permissions": {
+        "Permissions": "Oprávnění uživatelů"
+    },
+    "Sections": {
+        "SectionsAndLocations": "Sekce a lokace"
+    }
 }
